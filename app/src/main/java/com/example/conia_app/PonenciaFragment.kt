@@ -7,6 +7,11 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.recyclerview.widget.LinearLayoutManager
+import androidx.recyclerview.widget.RecyclerView
+import com.example.conia_app.Adapters.AdapterCustomPonencias
+import com.example.conia_app.EntidadRecycler.Ponencias
+import kotlinx.android.synthetic.main.fragment_ponencia.view.*
 
 
 // TODO: Rename parameter arguments, choose names that match
@@ -28,6 +33,10 @@ class PonenciaFragment : Fragment() {
     private var param1: String? = null
     private var param2: String? = null
     private var listener: OnFragmentInteractionListener? = null
+    //Agrego acá mis variables con lateinit
+    lateinit var lista: RecyclerView
+    lateinit var adaptador: AdapterCustomPonencias
+
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -35,6 +44,16 @@ class PonenciaFragment : Fragment() {
             param1 = it.getString(ARG_PARAM1)
             param2 = it.getString(ARG_PARAM2)
         }
+
+        //Acá hago el llenado
+        val ponencias = ArrayList<Ponencias>()
+        //rellenamos datos
+        ponencias.add(Ponencias("Pera", 25.0, 3.0, R.drawable.pera))
+        ponencias.add(Ponencias("Manzana", 300.0, 3.0, R.drawable.manzana))
+        ponencias.add(Ponencias("Melón", 220.0, 3.0, R.drawable.melon))
+
+
+        adaptador = AdapterCustomPonencias(ponencias)
     }
 
     override fun onCreateView(
@@ -42,7 +61,18 @@ class PonenciaFragment : Fragment() {
         savedInstanceState: Bundle?
     ): View? {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_ponencia, container, false)
+        val view=inflater.inflate(R.layout.fragment_ponencia, container, false)
+        bind(view)
+
+        //Acá pongo un observador del viewModel, agregar un método update al adaptador
+        return view
+    }
+
+    //Acá estoy setteando todas las vistas
+    fun bind(view:View){
+        this.lista=view.lista
+        this.lista.adapter = adaptador
+        this.lista.layoutManager = LinearLayoutManager(context)
     }
 
     // TODO: Rename method, update argument and hook method into UI event

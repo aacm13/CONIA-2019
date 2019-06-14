@@ -8,7 +8,12 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.navigation.findNavController
+import androidx.recyclerview.widget.LinearLayoutManager
+import androidx.recyclerview.widget.RecyclerView
+import com.example.conia_app.Adapters.AdapterCustomPonencias
+import com.example.conia_app.EntidadRecycler.Ponencias
 import kotlinx.android.synthetic.main.fragment_main.*
+import kotlinx.android.synthetic.main.fragment_ponencia.view.*
 
 
 // TODO: Rename parameter arguments, choose names that match
