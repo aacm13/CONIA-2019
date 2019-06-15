@@ -64,8 +64,6 @@ class LoginFragment : Fragment() {
         super.onAttach(context)
         if (context is OnFragmentInteractionListener) {
             listener = context
-        } else {
-            throw RuntimeException(context.toString() + " must implement OnFragmentInteractionListener")
         }
     }
 

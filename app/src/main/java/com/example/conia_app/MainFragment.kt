@@ -52,6 +52,11 @@ class MainFragment : Fragment() {
 
         btn_ponencia.setOnClickListener{
             it.findNavController().navigate(R.id.toPonencia)
+
+
+        }
+        btn_presentacion.setOnClickListener{
+            it.findNavController().navigate(R.id.toPresentaciones)
         }
     }
 
@@ -64,8 +69,6 @@ class MainFragment : Fragment() {
         super.onAttach(context)
         if (context is OnFragmentInteractionListener) {
             listener = context
-        } else {
-            throw RuntimeException(context.toString() + " must implement OnFragmentInteractionListener")
         }
     }
 

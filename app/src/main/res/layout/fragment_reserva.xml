@@ -6,6 +6,9 @@
              tools:context=".ReservaFragment">
 
     <!-- TODO: Update blank fragment layout -->
-
+    <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Estas son las reservaciones"/>
 
 </FrameLayout>

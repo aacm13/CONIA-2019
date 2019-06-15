@@ -21,8 +21,8 @@
         android:icon="@drawable/ic_android"
         android:title="Ponencias" />
 
-    <item
+<!-- fdsfdsfsd<item
         android:id="@id/bottom_nav_view"
-        android:icon="@drawable/ic_android"
-        android:title="Presentaciones" />
+        android:icon="@drawable/ic_assignment_turned_in_black_24dp"
+        android:title="Presentaciones" />-->
 </menu>
