@@ -3,7 +3,7 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/nav_grapgh"
-    app:startDestination="@id/loginFragment2">
+    app:startDestination="@id/mainFragment">
 
     <fragment
         android:id="@+id/ponenciaFragment"
@@ -20,15 +20,7 @@
         android:name="com.example.conia_app.PresentacionesFragment"
         android:label="fragment_presentaciones"
         tools:layout="@layout/fragment_presentaciones" />
-    <fragment
-        android:id="@+id/loginFragment2"
-        android:name="com.example.conia_app.LoginFragment"
-        android:label="fragment_login"
-        tools:layout="@layout/fragment_login">
-        <action
-            android:id="@+id/toMainFragment"
-            app:destination="@id/mainFragment" />
-    </fragment>
+
     <fragment
         android:id="@+id/mainFragment"
         android:name="com.example.conia_app.MainFragment"

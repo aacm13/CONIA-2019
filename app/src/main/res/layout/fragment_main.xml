@@ -15,20 +15,9 @@
         android:layout_gravity="center"
         android:orientation="vertical">
 
-        <Button
-            android:id="@+id/btn_ponencia"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center"
-            android:gravity="center"
-            android:text="a Ponencias" />
-
-        <Button
-            android:id="@+id/btn_presentacion"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center"
-            android:gravity="center"
-            android:text="a Presentaciones" />
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:text="Aqui iria una pequeña introduccion y datos acerca del CONIA"/>
     </LinearLayout>
 </FrameLayout>
