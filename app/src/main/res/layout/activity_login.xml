@@ -8,14 +8,25 @@
         tools:context=".Login"
         android:orientation="vertical"
         android:background="#34675C">
-
-
+    <ImageView android:src="@drawable/gradient_bg"
+                android:layout_width="match_parent"
+               android:layout_height="match_parent"/>
+    <ImageView android:layout_width="match_parent"
+               android:layout_height="200dp"
+               android:maxHeight="400dp"
+               android:src="@drawable/conia_logo"
+               android:layout_marginBottom="450dp"
+               android:layout_marginEnd="10dp"
+               android:layout_marginStart="10dp"
+               app:layout_constraintBottom_toBottomOf="parent"
+               app:layout_constraintEnd_toEndOf="parent"
+    />
     <LinearLayout
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="center"
         android:layout_marginEnd="72dp"
-        android:layout_marginBottom="292dp"
+        android:layout_marginBottom="155dp"
         android:orientation="vertical"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent">
@@ -42,6 +53,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_margin="10dp"
+
             android:padding="8dp"
             android:layout_gravity="center"
             android:layout_weight="1"
@@ -54,12 +66,16 @@
             android:inputType="textPassword" />
 
         <Button
-            android:id="@+id/btn_login"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center"
-            android:layout_margin="10dp"
-            android:text="Ingresar" />
+                android:id="@+id/btn_login"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="10dp"
+                android:padding="8dp"
+                android:layout_weight="1"
+                android:layout_gravity="center"
+                android:text="Ingresar"
+                android:background="@drawable/rounded_button"
+                android:textColor="@color/cardview_light_background"/>
 
 
         <TextView
