@@ -23,23 +23,32 @@
 
         <EditText
             android:id="@+id/et_pass"
-            android:layout_width="241dp"
-            android:layout_height="0dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
             android:layout_gravity="center"
             android:layout_margin="10dp"
+            android:padding="8dp"
             android:layout_weight="1"
-            android:background="#B7B8B9"
+            android:background="@drawable/rounded_edittext"
+            android:drawableLeft="@drawable/ic_user"
+            android:drawablePadding="10dp"
+            android:drawableStart="@drawable/ic_user"
             android:ems="10"
             android:hint="@string/username"
             android:inputType="textPassword" />
 
         <EditText
             android:id="@+id/et_user"
-            android:layout_width="241dp"
-            android:layout_height="0dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="10dp"
+            android:padding="8dp"
             android:layout_gravity="center"
             android:layout_weight="1"
-            android:background="#B7B8B9"
+            android:background="@drawable/rounded_edittext"
+            android:drawableLeft="@drawable/ic_password"
+            android:drawablePadding="10dp"
+            android:drawableStart="@drawable/ic_password"
             android:ems="10"
             android:hint="@string/password"
             android:inputType="textPassword" />
