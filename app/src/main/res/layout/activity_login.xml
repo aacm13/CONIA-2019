@@ -8,49 +8,73 @@
         tools:context=".Login"
         android:orientation="vertical"
         android:background="#34675C">
+    <ImageView android:src="@drawable/gradient_bg"
+                android:layout_width="match_parent"
+               android:layout_height="match_parent"/>
 
-
+    <ImageView android:layout_width="match_parent"
+               android:layout_height="200dp"
+               android:maxHeight="400dp"
+               android:src="@drawable/conia_logo"
+               android:layout_marginEnd="10dp"
+               android:layout_marginStart="10dp"
+               app:layout_constraintStart_toStartOf="parent"
+               app:layout_constraintTop_toTopOf="parent"
+    />
     <LinearLayout
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_gravity="center"
-        android:layout_marginEnd="72dp"
-        android:layout_marginBottom="292dp"
+        android:gravity="center_horizontal"
         android:orientation="vertical"
+        android:padding="50dp"
+        android:layout_marginBottom="100dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent">
 
 
         <EditText
-            android:id="@+id/et_pass"
-            android:layout_width="241dp"
-            android:layout_height="0dp"
+            android:id="@+id/et_user"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
             android:layout_gravity="center"
             android:layout_margin="10dp"
+            android:padding="8dp"
             android:layout_weight="1"
-            android:background="#B7B8B9"
+            android:background="@drawable/rounded_edittext"
+            android:drawableLeft="@drawable/ic_user"
+            android:drawablePadding="10dp"
+            android:drawableStart="@drawable/ic_user"
             android:ems="10"
             android:hint="@string/username"
-            android:inputType="textPassword" />
+            android:inputType="text" />
 
         <EditText
-            android:id="@+id/et_user"
-            android:layout_width="241dp"
-            android:layout_height="0dp"
+            android:id="@+id/et_pass"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="10dp"
+            android:padding="8dp"
             android:layout_gravity="center"
             android:layout_weight="1"
-            android:background="#B7B8B9"
+            android:background="@drawable/rounded_edittext"
+            android:drawableLeft="@drawable/ic_password"
+            android:drawablePadding="10dp"
+            android:drawableStart="@drawable/ic_password"
             android:ems="10"
             android:hint="@string/password"
             android:inputType="textPassword" />
 
         <Button
-            android:id="@+id/btn_login"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center"
-            android:layout_margin="10dp"
-            android:text="Ingresar" />
+                android:id="@+id/btn_login"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="10dp"
+                android:padding="8dp"
+                android:layout_weight="1"
+                android:layout_gravity="center"
+                android:text="Ingresar"
+                android:background="@drawable/rounded_button"
+                android:textColor="@color/cardview_light_background"/>
 
 
         <TextView
