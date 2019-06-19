@@ -11,29 +11,29 @@
     <ImageView android:src="@drawable/gradient_bg"
                 android:layout_width="match_parent"
                android:layout_height="match_parent"/>
+
     <ImageView android:layout_width="match_parent"
                android:layout_height="200dp"
                android:maxHeight="400dp"
                android:src="@drawable/conia_logo"
-               android:layout_marginBottom="450dp"
                android:layout_marginEnd="10dp"
                android:layout_marginStart="10dp"
-               app:layout_constraintBottom_toBottomOf="parent"
-               app:layout_constraintEnd_toEndOf="parent"
+               app:layout_constraintStart_toStartOf="parent"
+               app:layout_constraintTop_toTopOf="parent"
     />
     <LinearLayout
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_gravity="center"
-        android:layout_marginEnd="72dp"
-        android:layout_marginBottom="155dp"
+        android:gravity="center_horizontal"
         android:orientation="vertical"
+        android:padding="50dp"
+        android:layout_marginBottom="100dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent">
 
 
         <EditText
-            android:id="@+id/et_pass"
+            android:id="@+id/et_user"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
@@ -46,14 +46,13 @@
             android:drawableStart="@drawable/ic_user"
             android:ems="10"
             android:hint="@string/username"
-            android:inputType="textPassword" />
+            android:inputType="text" />
 
         <EditText
-            android:id="@+id/et_user"
+            android:id="@+id/et_pass"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_margin="10dp"
-
             android:padding="8dp"
             android:layout_gravity="center"
             android:layout_weight="1"
