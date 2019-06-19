@@ -1,6 +1,5 @@
 package com.example.conia_app.Adapters
 
-import android.content.Context
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -37,7 +36,7 @@ class AdapterCustomPonencias(items:ArrayList<Ponencias>): RecyclerView.Adapter<A
         //mappeo los valores que tengo en holder
         holder.foto?.setImageResource(item?.imagen!!)
         holder.nombre?.text = item?.nombre
-        holder.precio?.text = item?.precio.toString()
+        holder.precio?.text = item?.descripcion
         holder.rating?.rating = item?.rating?.toFloat()!!
     }
 
@@ -49,7 +48,7 @@ class AdapterCustomPonencias(items:ArrayList<Ponencias>): RecyclerView.Adapter<A
         var rating: RatingBar? = null
 
         init {
-            foto = vista.findViewById(R.id.iv_platillo)
+            foto = vista.findViewById(R.id.iv_ponente)
             nombre = vista.findViewById(R.id.tv_nombreP)
             precio = vista.findViewById(R.id.tv_descripcion)
             rating = vista.findViewById(R.id.ratingBar)
