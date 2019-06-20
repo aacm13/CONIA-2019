@@ -49,10 +49,10 @@ class PonenciaFragment : Fragment() {
         //Acá hago el llenado
         val ponencias = ArrayList<Ponencias>()
         //rellenamos datos
-        ponencias.add(Ponencias("Bill Gates expo", "La presente ponencia" +
+        ponencias.add(Ponencias("Bill Gates expo", "La presente ponencia " +
                 "tiene por objetivo explicar cómo me volví rico xdxdxd soi el bil gueits", 3.0, R.drawable.billgates))
         ponencias.add(Ponencias("Steve Jobs success", "Esta ponencia pretende abondar mi percepción" +
-                "del éxito, y trataré de explicarte que debes hacer para alcanzarlo", 5.0, R.drawable.stevejobs))
+                " del éxito, y trataré de explicarte que debes hacer para alcanzarlo", 5.0, R.drawable.stevejobs))
         ponencias.add(Ponencias("Privacidad de datos", "En esta expo te daré tips para" +
                 "proteger tus datos en internet y cómo evitar que te los roben, soy experto, créeme, no es que los " +
                 "robe, pero a diario protejo muchos xdxdxd", 1.0, R.drawable.markzuckerberg))

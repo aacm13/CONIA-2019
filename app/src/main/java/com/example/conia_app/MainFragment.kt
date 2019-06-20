@@ -7,13 +7,18 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.core.content.contentValuesOf
 import androidx.navigation.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
+import androidx.viewpager.widget.ViewPager
 import com.example.conia_app.Adapters.AdapterCustomPonencias
+import com.example.conia_app.Adapters.ViewPageAdapter
 import com.example.conia_app.EntidadRecycler.Ponencias
 import kotlinx.android.synthetic.main.fragment_main.*
+import kotlinx.android.synthetic.main.fragment_main.view.*
 import kotlinx.android.synthetic.main.fragment_ponencia.view.*
+import kotlinx.android.synthetic.main.template_imagenes_conia.view.*
 
 
 // TODO: Rename parameter arguments, choose names that match
@@ -26,30 +31,39 @@ class MainFragment : Fragment() {
 
     private var listener: OnFragmentInteractionListener? = null
 
+    //La variable del viewPager xdxd y su adaptador
+    lateinit var viewPager: ViewPager
+    lateinit var adaptador: ViewPageAdapter
 
     companion object {
         fun newInstance(): MainFragment = MainFragment()
     }
-
-        override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? =
-                inflater.inflate(R.layout.fragment_main, container, false)
-
-
-
-    /*override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
-        super.onViewCreated(view, savedInstanceState)
-
-        btn_ponencia.setOnClickListener{
-            it.findNavController().navigate(R.id.toPonencia)
-
-
+/*
+    override fun onCreate(savedInstanceState: Bundle?) {
+        super.onCreate(savedInstanceState)
+        arguments?.let {
+            //param1 = it.getString(ARG_PARAM1)
+            //param2 = it.getString(ARG_PARAM2)
         }
-        btn_presentacion.setOnClickListener{
-            it.findNavController().navigate(R.id.toPresentaciones)
-        }
+        adaptador = ViewPageAdapter(view.context)
     }*/
 
+    override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
 
+        val view = inflater.inflate(R.layout.fragment_main, container, false)
+
+        bind(view)
+
+        return view
+    }
+
+    //Hago la función bind
+    fun bind(view:View){
+        this.viewPager = view.view_pager_conia //ACÁ VA EL THIS.VIEWPAGER = view. id de mi lista del view image conia
+        this.viewPager.adapter = activity?.applicationContext?.let { ViewPageAdapter(it) }
+        //this.lista.adapter = adaptador
+        //this.lista.layoutManager = LinearLayoutManager(context)
+    }
 
     override fun onAttach(context: Context) {
         super.onAttach(context)
@@ -63,11 +77,8 @@ class MainFragment : Fragment() {
         listener = null
     }
 
-
     interface OnFragmentInteractionListener {
         // TODO: Update argument type and name
-        fun onFragmentInteraction(uri: Uri)
+        fun onFragmentInteraction()
     }
-
-
 }

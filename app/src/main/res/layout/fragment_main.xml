@@ -15,9 +15,15 @@
         android:layout_gravity="center"
         android:orientation="vertical">
 
+        <androidx.viewpager.widget.ViewPager
+            android:layout_width="match_parent"
+            android:layout_height="128dp"
+            android:id="@+id/view_pager_conia"/>
+
         <TextView
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:text="Aqui iria una pequeña introduccion y datos acerca del CONIA"/>
+            android:text="@string/descripcion_Evento"
+            android:textAppearance="@style/TextAppearance.AppCompat.Body2" />
     </LinearLayout>
 </FrameLayout>
