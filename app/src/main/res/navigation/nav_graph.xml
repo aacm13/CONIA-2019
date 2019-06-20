@@ -9,12 +9,14 @@
         android:id="@+id/ponenciaFragment"
         android:name="com.example.conia_app.PonenciaFragment"
         android:label="fragment_ponencia"
-        tools:layout="@layout/fragment_ponencia" />
+        tools:layout="@layout/fragment_ponencia" >
+        <action android:id="@+id/action_ponenciaFragment_to_reservaFragment" app:destination="@id/reservaFragment"/>
+    </fragment>
     <fragment
-        android:id="@+id/reservaFragment"
-        android:name="com.example.conia_app.ReservaFragment"
-        android:label="fragment_reserva"
-        tools:layout="@layout/fragment_reserva" />
+            android:id="@+id/reservaFragment"
+            android:name="com.example.conia_app.ReservaFragment"
+            android:label="ponenciaInfoCompleta"
+            tools:layout="@layout/fragment_reserva"/>
     <fragment
         android:id="@+id/presentacionesFragment"
         android:name="com.example.conia_app.PresentacionesFragment"
@@ -29,9 +31,6 @@
         <action
             android:id="@+id/toPonencia"
             app:destination="@id/ponenciaFragment" />
-        <action
-            android:id="@+id/toReserva"
-            app:destination="@id/reservaFragment" />
         <action
             android:id="@+id/toPresentaciones"
             app:destination="@id/presentacionesFragment" />
