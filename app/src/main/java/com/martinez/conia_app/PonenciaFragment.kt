@@ -10,7 +10,7 @@ import android.view.ViewGroup
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.martinez.conia_app.Adapters.AdapterCustomPonencias
-import com.martinez.conia_app.EntidadRecycler.Ponencias
+import com.martinez.conia_app.DataBase.Entities.Ponencias
 import kotlinx.android.synthetic.main.fragment_ponencia.view.*
 
 

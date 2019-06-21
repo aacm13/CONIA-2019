@@ -7,7 +7,7 @@ import android.widget.ImageView
 import android.widget.RatingBar
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
-import com.martinez.conia_app.EntidadRecycler.Ponencias
+import com.martinez.conia_app.DataBase.Entities.Ponencias
 import com.martinez.conia_app.R
 
 class AdapterCustomPonencias(items:ArrayList<Ponencias>): RecyclerView.Adapter<AdapterCustomPonencias.ViewHolder>()  {
