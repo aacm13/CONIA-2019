@@ -1,6 +1,8 @@
 <resources>
     <string name="app_name">CONIA</string>
 
+    <string name="create_new_account"><u>Crear una aqui</u>.</string>
+
     <!-- Menu strings -->
     <string name="shopping_cart">Shopping Cart</string>
     <string name="settings">Settings</string>
