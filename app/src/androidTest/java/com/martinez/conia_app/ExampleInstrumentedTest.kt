@@ -1,4 +1,4 @@
-package com.example.conia_app
+package com.martinez.conia_app
 
 import androidx.test.InstrumentationRegistry
 import androidx.test.runner.AndroidJUnit4

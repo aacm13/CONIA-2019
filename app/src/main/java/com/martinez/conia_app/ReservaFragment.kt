@@ -1,4 +1,4 @@
-package com.example.conia_app
+package com.martinez.conia_app
 
 import android.content.Context
 import android.net.Uri

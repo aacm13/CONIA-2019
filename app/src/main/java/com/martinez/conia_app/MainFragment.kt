@@ -1,24 +1,14 @@
-package com.example.conia_app
+package com.martinez.conia_app
 
 import android.content.Context
-import android.net.Uri
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import androidx.core.content.contentValuesOf
-import androidx.navigation.findNavController
-import androidx.recyclerview.widget.LinearLayoutManager
-import androidx.recyclerview.widget.RecyclerView
 import androidx.viewpager.widget.ViewPager
-import com.example.conia_app.Adapters.AdapterCustomPonencias
-import com.example.conia_app.Adapters.ViewPageAdapter
-import com.example.conia_app.EntidadRecycler.Ponencias
-import kotlinx.android.synthetic.main.fragment_main.*
+import com.martinez.conia_app.Adapters.ViewPageAdapter
 import kotlinx.android.synthetic.main.fragment_main.view.*
-import kotlinx.android.synthetic.main.fragment_ponencia.view.*
-import kotlinx.android.synthetic.main.template_imagenes_conia.view.*
 
 
 // TODO: Rename parameter arguments, choose names that match

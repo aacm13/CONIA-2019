@@ -1,4 +1,4 @@
-package com.example.conia_app.EntidadRecycler
+package com.martinez.conia_app.EntidadRecycler
 
 class Ponencias(nombre:String, descripcion:String, rating:Double, imagen:Int) {
 

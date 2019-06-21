@@ -1,4 +1,4 @@
-package com.example.conia_app.Adapters
+package com.martinez.conia_app.Adapters
 
 import android.content.Context
 import android.view.LayoutInflater
@@ -7,7 +7,7 @@ import android.view.ViewGroup
 import android.widget.ImageView
 import androidx.viewpager.widget.PagerAdapter
 import androidx.viewpager.widget.ViewPager
-import com.example.conia_app.R
+import com.martinez.conia_app.R
 
 class ViewPageAdapter(private val context: Context) : PagerAdapter() {
 

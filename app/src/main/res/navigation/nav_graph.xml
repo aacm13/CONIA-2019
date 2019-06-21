@@ -7,25 +7,25 @@
 
     <fragment
         android:id="@+id/ponenciaFragment"
-        android:name="com.example.conia_app.PonenciaFragment"
+        android:name="com.martinez.conia_app.PonenciaFragment"
         android:label="fragment_ponencia"
         tools:layout="@layout/fragment_ponencia" >
         <action android:id="@+id/action_ponenciaFragment_to_reservaFragment" app:destination="@id/reservaFragment"/>
     </fragment>
     <fragment
             android:id="@+id/reservaFragment"
-            android:name="com.example.conia_app.ReservaFragment"
+            android:name="com.martinez.conia_app.ReservaFragment"
             android:label="ponenciaInfoCompleta"
             tools:layout="@layout/fragment_reserva"/>
     <fragment
         android:id="@+id/presentacionesFragment"
-        android:name="com.example.conia_app.PresentacionesFragment"
+        android:name="com.martinez.conia_app.PresentacionesFragment"
         android:label="fragment_presentaciones"
         tools:layout="@layout/fragment_presentaciones" />
 
     <fragment
         android:id="@+id/mainFragment"
-        android:name="com.example.conia_app.MainFragment"
+        android:name="com.martinez.conia_app.MainFragment"
         android:label="fragment_main"
         tools:layout="@layout/fragment_main">
         <action

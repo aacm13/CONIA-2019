@@ -1,4 +1,4 @@
-package com.example.conia_app
+package com.martinez.conia_app
 
 import android.content.Context
 import android.net.Uri
@@ -9,8 +9,8 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
-import com.example.conia_app.Adapters.AdapterCustomPonencias
-import com.example.conia_app.EntidadRecycler.Ponencias
+import com.martinez.conia_app.Adapters.AdapterCustomPonencias
+import com.martinez.conia_app.EntidadRecycler.Ponencias
 import kotlinx.android.synthetic.main.fragment_ponencia.view.*
 
 
