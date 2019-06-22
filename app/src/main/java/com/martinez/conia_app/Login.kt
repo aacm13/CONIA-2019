@@ -3,6 +3,8 @@ package com.martinez.conia_app
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import androidx.fragment.app.Fragment
+import com.martinez.conia_app.Fragments.loginFragment
 import kotlinx.android.synthetic.main.activity_login.*
 
 class Login : AppCompatActivity() {
@@ -14,17 +16,18 @@ class Login : AppCompatActivity() {
         val actionBar = supportActionBar
         actionBar!!.hide()
 
-        btn_login.setOnClickListener{
-            val intent = Intent(this,MainActivity::class.java)
-            startActivity(intent)
-        }
-
-        crear_cuenta_text_view.setOnClickListener {
-            val intent = Intent(this, CreateAccount::class.java)
-            startActivity(intent)
-        }
+        val login = loginFragment.newInstance()
+        openFragment(login)
 
 
+    }
+
+    private fun openFragment(fragment: Fragment) {
+        val manager = supportFragmentManager
+        val transaction = manager.beginTransaction()
+        transaction.replace(R.id.fragment_container,fragment)
+        transaction.addToBackStack(null)
+        transaction.commit()
     }
 
 }

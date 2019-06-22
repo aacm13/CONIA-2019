@@ -5,6 +5,8 @@ import android.os.Bundle
 import androidx.appcompat.app.ActionBar
 import androidx.fragment.app.Fragment
 import com.google.android.material.bottomnavigation.BottomNavigationView
+import com.martinez.conia_app.Fragments.MainFragment
+import com.martinez.conia_app.Fragments.PonenciaFragment
 import kotlinx.android.synthetic.main.activity_main.*
 
 class MainActivity : AppCompatActivity() {
