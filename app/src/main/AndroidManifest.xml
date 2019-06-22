@@ -9,15 +9,16 @@
             android:roundIcon="@mipmap/logo_g_round"
             android:supportsRtl="true"
             android:theme="@style/AppTheme">
-        <activity android:name="com.martinez.conia_app.Login">
+        <activity android:name=".CreateAccount">
+        </activity>
+        <activity android:name=".Login">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN"/>
 
                 <category android:name="android.intent.category.LAUNCHER"/>
             </intent-filter>
         </activity>
-        <activity android:name="com.martinez.conia_app.MainActivity">
-
+        <activity android:name=".MainActivity">
         </activity>
     </application>
 

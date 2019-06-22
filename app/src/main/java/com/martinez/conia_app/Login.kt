@@ -13,10 +13,18 @@ class Login : AppCompatActivity() {
         
         val actionBar = supportActionBar
         actionBar!!.hide()
-        
+
         btn_login.setOnClickListener{
             val intent = Intent(this,MainActivity::class.java)
             startActivity(intent)
         }
+
+        crear_cuenta_text_view.setOnClickListener {
+            val intent = Intent(this, CreateAccount::class.java)
+            startActivity(intent)
+        }
+
+
     }
+
 }

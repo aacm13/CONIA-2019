@@ -1,7 +1,8 @@
 <resources>
     <string name="app_name">CONIA</string>
 
-    <string name="create_new_account"><u>Crear una aqui</u>.</string>
+    <string name="create_new_account"><u>Crear una aqui</u>.
+    </string>
 
     <!-- Menu strings -->
     <string name="shopping_cart">Shopping Cart</string>
@@ -12,12 +13,16 @@
     <!-- Screen strings -->
     <string name="step_one">Step One</string>
     <string name="step_two">Step Two</string>
-    <string name="descripcion_Evento"> La Universidad Centroamericana José Simeón Cañas (UCA) se complace en invitar a profesionales,
-        académicos, investigadores y empresas relacionadas con el quehacer de la ingeniería y arquitectura en El Salvador y América a
+    <string name="descripcion_Evento">La Universidad Centroamericana José Simeón Cañas (UCA) se complace en invitar a
+        profesionales,
+        académicos, investigadores y empresas relacionadas con el quehacer de la ingeniería y arquitectura en El
+        Salvador y América a
         participar en el IX Congreso de Ingeniería y Arquitectura (CONIA 2019).
 
-        Este año, el Congreso de Ingeniería y Arquitectura, CONIA 2019 tiene como lema: “Hacia la innovación y el cambio tecnológico
-        para un desarrollo sostenible”. </string>
+        Este año, el Congreso de Ingeniería y Arquitectura, CONIA 2019 tiene como lema: “Hacia la innovación y el cambio
+        tecnológico
+        para un desarrollo sostenible”.
+    </string>
     <string name="deep_link_instructions">Type your deep link args</string>
     <string name="settings_fragment_text">Settings Fragment</string>
     <string name="shopping_fragment_text">Shopping Fragment</string>
@@ -28,4 +33,7 @@
     <string name="send_deep_link_notification_button">Send deep link notification</string>
     <string name="password">Password</string>
     <string name="username">Username</string>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
 </resources>

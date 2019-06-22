@@ -6,8 +6,7 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         tools:context=".Login"
-        android:orientation="vertical"
-        android:background="#34675C">
+        android:orientation="vertical">
     <ImageView android:src="@drawable/gradient_bg"
                android:layout_width="match_parent"
                android:layout_height="match_parent" android:id="@+id/imageView"/>
@@ -40,7 +39,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="Sign In"
-                android:layout_marginBottom="30dp"
+                android:layout_marginBottom="20dp"
                 android:gravity="center"
                 android:textSize="20sp"/>
         <EditText
@@ -92,14 +91,14 @@
                 android:layout_height="wrap_content"
                 android:orientation="horizontal"
                 android:layout_marginTop="20dp"
-                android:layout_marginBottom="100dp"
+                android:layout_marginBottom="110dp"
                 android:gravity="center">
             <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="¿No tienes cuenta? "/>
             <TextView
-                    android:id="@+id/creat_cuenta_text_view"
+                    android:id="@+id/crear_cuenta_text_view"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="@string/create_new_account"/>
