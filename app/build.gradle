@@ -7,7 +7,7 @@ apply plugin: 'kotlin-android-extensions'
 android {
     compileSdkVersion 28
     defaultConfig {
-        applicationId "com.example.conia_app"
+        applicationId "com.martinez.conia_app"
         minSdkVersion 21
         targetSdkVersion 28
         versionCode 1
@@ -37,4 +37,12 @@ dependencies {
     implementation 'com.android.support:design:28.0.2'
     implementation 'androidx.room:room-runtime:2.1.0'
     annotationProcessor 'androidx.room:room-compiler:2.1.0'
+    implementation 'com.google.firebase:firebase-core:16.0.9'
+    implementation 'com.google.firebase:firebase-auth:17.0.0'
+    implementation 'com.google.firebase:firebase-storage:16.1.0'
+    implementation 'com.google.firebase:firebase-messaging:17.6.0'
+    implementation 'com.firebaseui:firebase-ui-auth:4.1.0'
 }
+
+apply plugin: 'com.google.gms.google-services'
+

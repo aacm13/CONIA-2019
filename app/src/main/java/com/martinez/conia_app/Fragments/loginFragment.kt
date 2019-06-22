@@ -7,7 +7,6 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import com.martinez.conia_app.CreateAccount
 import com.martinez.conia_app.MainActivity
 
 import com.martinez.conia_app.R
