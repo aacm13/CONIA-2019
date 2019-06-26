@@ -15,6 +15,22 @@
       },
       "oauth_client": [
         {
+          "client_id": "746413651681-aphp382o8vm10t5ul2va38fok8icv6vk.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.martinez.conia_app",
+            "certificate_hash": "6ac5093d7b6b15c1b47e64bc3a5a1ec58374ea6d"
+          }
+        },
+        {
+          "client_id": "746413651681-k2ot2ajdvblvomkdgaf10365kvhcdkst.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.martinez.conia_app",
+            "certificate_hash": "ce7957e85b6b4a0415c2a1a1b1e913ac5edb02d3"
+          }
+        },
+        {
           "client_id": "746413651681-k2irv6bmvqfu6m0e96e9id0mqovsi6oa.apps.googleusercontent.com",
           "client_type": 3
         }

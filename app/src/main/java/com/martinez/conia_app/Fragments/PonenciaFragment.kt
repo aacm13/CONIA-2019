@@ -9,10 +9,17 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
+import com.firebase.ui.database.ChangeEventListener
+import com.google.firebase.database.*
 import com.martinez.conia_app.Adapters.AdapterCustomPonencias
 import com.martinez.conia_app.DataBase.Entities.Ponencias
+import com.martinez.conia_app.DataBase.ViewHolder.PonenciaViewHolder
 import com.martinez.conia_app.R
+import com.firebase.ui.database.FirebaseRecyclerAdapter
+import com.firebase.ui.database.FirebaseRecyclerOptions
+import kotlinx.android.synthetic.main.fragment_ponencia.*
 import kotlinx.android.synthetic.main.fragment_ponencia.view.*
+import kotlinx.android.synthetic.main.fragment_ponencia.view.lista
 
 
 // TODO: Rename parameter arguments, choose names that match
@@ -36,8 +43,10 @@ class PonenciaFragment : Fragment() {
     private var param2: String? = null
     private var listener: OnFragmentInteractionListener? = null
     //Agrego acá mis variables con lateinit
-    lateinit var lista: RecyclerView
-    lateinit var adaptador: AdapterCustomPonencias
+    lateinit var ponenciasList: MutableList<Ponencias>
+    lateinit var ref: DatabaseReference
+    private var PonRef: DatabaseReference? = null
+    private var mAdapter: FirebaseRecyclerAdapter<Ponencias, PonenciaViewHolder>? = null
 
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -47,47 +56,54 @@ class PonenciaFragment : Fragment() {
             param2 = it.getString(ARG_PARAM2)
         }
 
-        //Acá hago el llenado
-        val ponencias = ArrayList<Ponencias>()
-        //rellenamos datos
-        ponencias.add(Ponencias("Bill Gates expo", "La presente ponencia " +
-                "tiene por objetivo explicar cómo me volví rico xdxdxd soi el bil gueits", 3.0,
-            R.drawable.billgates
-        ))
-        ponencias.add(Ponencias("Steve Jobs success", "Esta ponencia pretende abondar mi percepción" +
-                " del éxito, y trataré de explicarte que debes hacer para alcanzarlo", 5.0,
-            R.drawable.stevejobs
-        ))
-        ponencias.add(Ponencias("Privacidad de datos", "En esta expo te daré tips para" +
-                "proteger tus datos en internet y cómo evitar que te los roben, soy experto, créeme, no es que los " +
-                "robe, pero a diario protejo muchos xdxdxd", 1.0, R.drawable.markzuckerberg
-        ))
-
-
-        adaptador = AdapterCustomPonencias(ponencias)
     }
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-
-
-        // Inflate the layout for this fragment
         val view=inflater.inflate(R.layout.fragment_ponencia, container, false)
-        bind(view)
-
-        //Acá pongo un observador del viewModel, agregar un método update al adaptador
         return view
-
-
     }
 
-    //Acá estoy setteando todas las vistas
-    fun bind(view:View){
-        this.lista=view.lista
-        this.lista.adapter = adaptador
-        this.lista.layoutManager = LinearLayoutManager(context)
+    override fun onActivityCreated(savedInstanceState: Bundle?) {
+
+
+
+        val layoutManager = LinearLayoutManager(context)
+        layoutManager.reverseLayout = false
+        lista.setHasFixedSize(true)
+        lista.layoutManager = layoutManager
+        super.onActivityCreated(savedInstanceState)
+        var query = FirebaseDatabase.getInstance()
+            .reference
+            .child("").child("gestor-de-eventos-32231")
+            .limitToLast(50)
+
+        val options = FirebaseRecyclerOptions.Builder<Ponencias>()
+            .setQuery(query, Ponencias::class.java)
+            .setLifecycleOwner(this)
+            .build()
+
+        mAdapter = object : FirebaseRecyclerAdapter<Ponencias, PonenciaViewHolder>(options) {
+            override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): PonenciaViewHolder {
+                return PonenciaViewHolder(LayoutInflater.from(parent.context)
+                    .inflate(R.layout.template_ponencias, parent, false))
+            }
+
+            protected override fun onBindViewHolder(holder: PonenciaViewHolder, position: Int, model: Ponencias) {
+                holder.bind(model)
+            }
+
+            override fun onDataChanged() {
+                // Called each time there is a new data snapshot. You may want to use this method
+                // to hide a loading spinner or check for the "no documents" state and update your UI.
+                // ...
+            }
+        }
+        lista.adapter = mAdapter
+
+
     }
 
     // TODO: Rename method, update argument and hook method into UI event

@@ -8,6 +8,7 @@
     <!-- Debo cambiar acá los id's de mis contenedores, y toda la paja, para luego
     poderlo unir sin problemas con retrofit y la api de firebase -->
     <androidx.cardview.widget.CardView
+            android:id="@+id/card"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             app:cardCornerRadius="10dp"

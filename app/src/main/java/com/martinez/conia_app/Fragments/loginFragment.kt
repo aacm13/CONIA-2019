@@ -59,7 +59,11 @@ class loginFragment : Fragment() {
 
 
        view.btn_login.setOnClickListener{
-               view -> login()
+               //view -> login()
+           activity?.let{
+               val intent = Intent (it, MainActivity::class.java)
+               it.startActivity(intent)
+           }
         }
 
        view.crear_cuenta_text_view.setOnClickListener {
