@@ -6,9 +6,6 @@
              tools:context=".Fragments.PonenciaFragment">
 
 
-    <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/lista"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent" />
+    <include layout="@layout/layout_recyler"/>
 
 </LinearLayout>

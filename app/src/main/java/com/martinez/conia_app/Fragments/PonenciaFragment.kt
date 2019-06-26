@@ -9,17 +9,12 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
-import com.firebase.ui.database.ChangeEventListener
 import com.google.firebase.database.*
-import com.martinez.conia_app.Adapters.AdapterCustomPonencias
 import com.martinez.conia_app.DataBase.Entities.Ponencias
 import com.martinez.conia_app.DataBase.ViewHolder.PonenciaViewHolder
 import com.martinez.conia_app.R
 import com.firebase.ui.database.FirebaseRecyclerAdapter
 import com.firebase.ui.database.FirebaseRecyclerOptions
-import kotlinx.android.synthetic.main.fragment_ponencia.*
-import kotlinx.android.synthetic.main.fragment_ponencia.view.*
-import kotlinx.android.synthetic.main.fragment_ponencia.view.lista
 
 
 // TODO: Rename parameter arguments, choose names that match
@@ -55,7 +50,6 @@ class PonenciaFragment : Fragment() {
             param1 = it.getString(ARG_PARAM1)
             param2 = it.getString(ARG_PARAM2)
         }
-
     }
 
     override fun onCreateView(
@@ -63,48 +57,52 @@ class PonenciaFragment : Fragment() {
         savedInstanceState: Bundle?
     ): View? {
         val view=inflater.inflate(R.layout.fragment_ponencia, container, false)
+
         return view
     }
 
-    override fun onActivityCreated(savedInstanceState: Bundle?) {
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
+        val database = FirebaseDatabase.getInstance()
+        ref = database.getReference("gestor-de-eventos-32231")
+        ref!!.keepSynced(true)
 
+        setupFire(view)
+    }
 
+    fun setupFire(view: View) {
+        val recyclerView = view.findViewById(R.id.lista) as RecyclerView
+        recyclerView.setHasFixedSize(true)
+        recyclerView.layoutManager = LinearLayoutManager(context)
 
-        val layoutManager = LinearLayoutManager(context)
-        layoutManager.reverseLayout = false
-        lista.setHasFixedSize(true)
-        lista.layoutManager = layoutManager
-        super.onActivityCreated(savedInstanceState)
-        var query = FirebaseDatabase.getInstance()
-            .reference
-            .child("").child("gestor-de-eventos-32231")
-            .limitToLast(50)
-
-        val options = FirebaseRecyclerOptions.Builder<Ponencias>()
-            .setQuery(query, Ponencias::class.java)
+        val mQuery = ref!!.orderByKey()
+        val mOptions = FirebaseRecyclerOptions.Builder<Ponencias>()
+            .setQuery(mQuery, Ponencias::class.java)
             .setLifecycleOwner(this)
             .build()
 
-        mAdapter = object : FirebaseRecyclerAdapter<Ponencias, PonenciaViewHolder>(options) {
+        mAdapter = object : FirebaseRecyclerAdapter<Ponencias, PonenciaViewHolder>(mOptions) {
+
+            override fun getItem(position: Int): Ponencias {
+                return super.getItem(position)
+            }
+
             override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): PonenciaViewHolder {
-                return PonenciaViewHolder(LayoutInflater.from(parent.context)
-                    .inflate(R.layout.template_ponencias, parent, false))
+                val view = LayoutInflater.from(parent!!.context)
+                    .inflate(R.layout.layout_recyler, parent, false)
+                return PonenciaViewHolder(view)
             }
 
-            protected override fun onBindViewHolder(holder: PonenciaViewHolder, position: Int, model: Ponencias) {
-                holder.bind(model)
-            }
-
-            override fun onDataChanged() {
-                // Called each time there is a new data snapshot. You may want to use this method
-                // to hide a loading spinner or check for the "no documents" state and update your UI.
-                // ...
+            override fun onBindViewHolder(viewHolder: PonenciaViewHolder, position: Int, model: Ponencias) {
+                viewHolder.bind(model)
             }
         }
-        lista.adapter = mAdapter
-
-
+        recyclerView.adapter = mAdapter
     }
+
+
+
+
 
     // TODO: Rename method, update argument and hook method into UI event
     fun onButtonPressed(uri: Uri) {
